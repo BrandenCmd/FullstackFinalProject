@@ -1,0 +1,2 @@
+class StarType < ApplicationRecord
+end

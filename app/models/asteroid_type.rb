@@ -1,0 +1,2 @@
+class AsteroidType < ApplicationRecord
+end

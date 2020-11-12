@@ -18,7 +18,7 @@ Planet
 Planet_type
 
 ```
-- type                                        (string, present, unique)
+- name                                        (string, present, unique)
 ```
 
 Star
@@ -35,7 +35,7 @@ Star
 Star_type
 
 ```
-- type                                        (string, present, unique)
+- name                                        (string, present, unique)
 ```
 
 Asteroid
@@ -52,7 +52,7 @@ Asteroid
 Asteroid_type
 
 ```
-- type                                        (string, present, unique)
+- name                                        (string, present, unique)
 ```
 
 (More models to add)

@@ -1,4 +1,4 @@
-<div class="column">
+<div class="column is-one-third">
   <div class="card">
     <% if star.image.present? %>
       <div class="card-image">
@@ -7,12 +7,12 @@
         </figure>
       </div>
     <% end %>
-    <div>
+    <div class="card-content">
       <p class="title is-4"><%= star.name %></p>
-      <p class="subtitle is-6"><%= star.cost %></p>
-    </div>
-    <div class="content">
-      <%= star.description %>
+      <p class="subtitle is-6 has-text-success	">$<%= star.cost %></p>
+      <div class="content">
+        <%= star.description %>
+      </div>
     </div>
     <footer class="card-footer">
       <a href="#" class="card-footer-item">Add to Cart</a>

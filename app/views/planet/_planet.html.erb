@@ -1,18 +1,18 @@
-<div class="column">
+<div class="column is-one-third">
   <div class="card">
     <% if planet.image.present? %>
       <div class="card-image">
-        <figure>
+        <figure class="image is 3x3">
           <%= image_tag planet.image %>
         </figure>
       </div>
     <% end %>
-    <div>
+    <div class="card-content">
       <p class="title is-4"><%= planet.name %></p>
-      <p class="subtitle is-6"><%= planet.cost %></p>
-    </div>
-    <div class="content">
-      <%= planet.description %>
+      <p class="subtitle is-6 has-text-success	">$<%= planet.cost %></p>
+      <div class="content">
+        <%= planet.description %>
+      </div>
     </div>
     <footer class="card-footer">
       <a href="#" class="card-footer-item">Add to Cart</a>

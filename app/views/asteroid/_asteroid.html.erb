@@ -3,7 +3,7 @@
     <% if asteroid.image.present? %>
       <div class="card-image">
         <figure>
-          <%= image_tag asteroid.image %>
+          <%= image_tag(asteroid.image, alt: "#{asteroid.name} image") %>
         </figure>
       </div>
     <% end %>

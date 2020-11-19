@@ -3,7 +3,7 @@
     <% if star.image.present? %>
       <div class="card-image">
         <figure>
-          <%= image_tag star.image %>
+          <%= image_tag(star.image, alt: "#{star.name} image") %>
         </figure>
       </div>
     <% end %>

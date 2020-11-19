@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'star/index'
+  get 'star/show'
+  get 'star/alphabetized'
+  get 'star/newest'
+  get 'star/hightolow'
+  get 'star/lowtohigh'
   get 'planet/index'
   get 'planet/show'
   get 'planet/alphabetized'

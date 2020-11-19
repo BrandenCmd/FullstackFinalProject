@@ -1,1 +1,10 @@
-<h1 class="title">Show</h1>
+<h1 class="title title is-2">Show</h1>
+
+<figure>
+  <%= image_tag @asteroid.image %>
+</figure>
+
+<p class="title is-4"><%= @asteroid.name %></p>
+<p class="subtitle is-6 has-text-success">$<%= @asteroid.cost %></p>
+<p><%= @asteroid_type.name %></p>
+<p><%= @asteroid.description %></p>

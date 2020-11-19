@@ -8,8 +8,9 @@
       </div>
     <% end %>
     <div class="card-content">
-      <p class="title is-4"><%= planet.name %></p>
-      <p class="subtitle is-6 has-text-success	">$<%= planet.cost %></p>
+      <p class="title is-4"><%= link_to planet.name, planet %></p>
+      <p class="subtitle is-6 has-text-success">$<%= planet.cost %></p>
+      <p><%= planet.planet_type.name %></p>
       <div class="content">
         <%= planet.description %>
       </div>

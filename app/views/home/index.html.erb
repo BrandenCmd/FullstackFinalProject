@@ -1,1 +1,79 @@
-<h1 class="title">Home Page</h1>
+<h1 class="title is-2">Welcome!</h1>
+
+<p class="subtitle is-4">
+  We have <a href="/planet">Planets</a>, <a href="/star">Stars</a>, and <a href="/asteroid">Asteroids</a> for Sale!
+</p>
+
+<div class="columns is-multiline is-mobile">
+  <div class="column is-one-third">
+    <div class="card">
+      <% if @planet.image.present? %>
+        <div class="card-image">
+          <figure class="image is 3x3">
+            <%= image_tag @planet.image %>
+          </figure>
+        </div>
+      <% end %>
+      <div class="card-content">
+        <p class="title is-4"><%= link_to @planet.name, @planet %></p>
+        <p class="subtitle is-6 has-text-success">$<%= @planet.cost %></p>
+        <p><%= @planet.planet_type.name %></p>
+        <div class="content">
+          <%= @planet.description %>
+        </div>
+      </div>
+      <footer class="card-footer">
+        <a href="#" class="card-footer-item">Add to Cart</a>
+        <a href="#" class="card-footer-item">Buy Now</a>
+      </footer>
+    </div>
+  </div>
+
+  <div class="column is-one-third">
+    <div class="card">
+      <% if @star.image.present? %>
+        <div class="card-image">
+          <figure>
+            <%= image_tag @star.image %>
+          </figure>
+        </div>
+      <% end %>
+      <div class="card-content">
+        <p class="title is-4"><%= link_to @star.name, @star %></p>
+        <p class="subtitle is-6 has-text-success">$<%= @star.cost %></p>
+        <p><%= @star.star_type.name %></p>
+        <div class="content">
+          <%= @star.description %>
+        </div>
+      </div>
+      <footer class="card-footer">
+        <a href="#" class="card-footer-item">Add to Cart</a>
+        <a href="#" class="card-footer-item">Buy Now</a>
+      </footer>
+    </div>
+  </div>
+
+  <div class="column is-one-third">
+    <div class="card">
+      <% if @asteroid.image.present? %>
+        <div class="card-image">
+          <figure>
+            <%= image_tag @asteroid.image %>
+          </figure>
+        </div>
+      <% end %>
+      <div class="card-content">
+        <p class="title is-4"><%= link_to @asteroid.name, @asteroid %></p>
+        <p class="subtitle is-6 has-text-success">$<%= @asteroid.cost %></p>
+        <p><%= @asteroid.asteroid_type.name %></p>
+        <div class="content">
+          <%= @asteroid.description %>
+        </div>
+      </div>
+      <footer class="card-footer">
+        <a href="#" class="card-footer-item">Add to Cart</a>
+        <a href="#" class="card-footer-item">Buy Now</a>
+      </footer>
+    </div>
+  </div>
+</div>

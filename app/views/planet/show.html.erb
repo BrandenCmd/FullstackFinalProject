@@ -1,1 +1,10 @@
-<h1 class="title">Show</h1>
+<h1 class="title title is-2">Show</h1>
+
+<figure>
+  <%= image_tag @planet.image %>
+</figure>
+
+<p class="title is-4"><%= @planet.name %></p>
+<p class="subtitle is-6 has-text-success">$<%= @planet.cost %></p>
+<p><%= @planet_type.name %></p>
+<p><%= @planet.description %></p>

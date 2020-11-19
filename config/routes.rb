@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'asteroid/index'
+  get 'asteroid/show'
+  get 'asteroid/alphabetized'
+  get 'asteroid/newest'
+  get 'asteroid/hightolow'
+  get 'asteroid/lowtohigh'
   get 'star/index'
   get 'star/show'
   get 'star/alphabetized'

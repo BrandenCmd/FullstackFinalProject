@@ -1,6 +1,6 @@
 class PlanetController < ApplicationController
   def index
-    @planets = Planet.all
+    @planets = Planet.page(params[:page]).per(9).all
   end
 
   def show; end

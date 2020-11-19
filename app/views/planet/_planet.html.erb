@@ -1,0 +1,22 @@
+<div class="column">
+  <div class="card">
+    <% if planet.image.present? %>
+      <div class="card-image">
+        <figure>
+          <%= image_tag planet.image %>
+        </figure>
+      </div>
+    <% end %>
+    <div>
+      <p class="title is-4"><%= planet.name %></p>
+      <p class="subtitle is-6"><%= planet.cost %></p>
+    </div>
+    <div class="content">
+      <%= planet.description %>
+    </div>
+    <footer class="card-footer">
+      <a href="#" class="card-footer-item">Add to Cart</a>
+      <a href="#" class="card-footer-item">Buy Now</a>
+    </footer>
+  </div>
+</div>

@@ -13,7 +13,7 @@ class StarController < ApplicationController
   end
 
   def newest
-    @stars_newest = Star.where("created_at < ?", 3.days.ago).page(params[:page]).per(9).all
+    @stars_newest = Star.where("created_at > ?", 3.days.ago).page(params[:page]).per(9).all
   end
 
   def hightolow

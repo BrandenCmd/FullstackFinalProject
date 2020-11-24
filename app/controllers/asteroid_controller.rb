@@ -13,7 +13,7 @@ class AsteroidController < ApplicationController
   end
 
   def newest
-    @asteroids_newest = Asteroid.where("created_at < ?", 3.days.ago).page(params[:page]).per(9).all
+    @asteroids_newest = Asteroid.where("created_at > ?", 3.days.ago).page(params[:page]).per(9).all
   end
 
   def hightolow

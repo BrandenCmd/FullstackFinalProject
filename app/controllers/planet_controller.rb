@@ -13,7 +13,7 @@ class PlanetController < ApplicationController
   end
 
   def newest
-    @planets_newest = Planet.where("created_at < ?", 3.days.ago).page(params[:page]).per(9).all
+    @planets_newest = Planet.where("created_at > ?", 3.days.ago).page(params[:page]).per(9).all
   end
 
   def hightolow

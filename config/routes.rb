@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :about, only: %i[index]
+  resources :contact, only: %i[index]
   resources :planet do
     collection do
       get "alphabetized"

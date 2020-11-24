@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_12_061710) do
+ActiveRecord::Schema.define(version: 2020_11_24_020507) do
+
+  create_table "abouts", force: :cascade do |t|
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -73,6 +79,13 @@ ActiveRecord::Schema.define(version: 2020_11_12_061710) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["asteroid_type_id"], name: "index_asteroids_on_asteroid_type_id"
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "phone"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "planet_types", force: :cascade do |t|

@@ -17,10 +17,10 @@ class PlanetController < ApplicationController
   end
 
   def hightolow
-    @planets_hightolow = Planet.order(:cost).page(params[:page]).per(9).all
+    @planets_hightolow = Planet.order(cost: :desc).page(params[:page]).per(9).all
   end
 
   def lowtohigh
-    @planets_lowtohigh = Planet.order(cost: :desc).page(params[:page]).per(9).all
+    @planets_lowtohigh = Planet.order(:cost).page(params[:page]).per(9).all
   end
 end

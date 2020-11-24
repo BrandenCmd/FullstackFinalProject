@@ -1,7 +1,28 @@
 Rails.application.routes.draw do
-  resources :planet, only: %i[index show]
-  resources :star, only: %i[index show]
-  resources :asteroid, only: %i[index show]
+  resources :planet do
+    collection do
+      get "alphabetized"
+      get "newest"
+      get "hightolow"
+      get "lowtohigh"
+    end
+  end
+  resources :star do
+    collection do
+      get "alphabetized"
+      get "newest"
+      get "hightolow"
+      get "lowtohigh"
+    end
+  end
+  resources :asteroid do
+    collection do
+      get "alphabetized"
+      get "newest"
+      get "hightolow"
+      get "lowtohigh"
+    end
+  end
   root to: "home#index"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

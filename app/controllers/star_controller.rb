@@ -17,10 +17,10 @@ class StarController < ApplicationController
   end
 
   def hightolow
-    @stars_hightolow = Star.order(:cost).page(params[:page]).per(9).all
+    @stars_hightolow = Star.order(cost: :desc).page(params[:page]).per(9).all
   end
 
   def lowtohigh
-    @stars_lowtohigh = Star.order(cost: :desc).page(params[:page]).per(9).all
+    @stars_lowtohigh = Star.order(:cost).page(params[:page]).per(9).all
   end
 end

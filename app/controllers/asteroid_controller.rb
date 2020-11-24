@@ -17,10 +17,10 @@ class AsteroidController < ApplicationController
   end
 
   def hightolow
-    @asteroids_hightolow = Asteroid.order(:cost).page(params[:page]).per(9).all
+    @asteroids_hightolow = Asteroid.order(cost: :desc).page(params[:page]).per(9).all
   end
 
   def lowtohigh
-    @asteroids_lowtohigh = Asteroid.order(cost: :desc).page(params[:page]).per(9).all
+    @asteroids_lowtohigh = Asteroid.order(:cost).page(params[:page]).per(9).all
   end
 end

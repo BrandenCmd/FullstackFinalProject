@@ -1,1 +1,20 @@
 <h1 class="title title is-2">Alphabetized</h1>
+
+<%= paginate @stars_alphabetized %>
+
+<div class="select mb-5">
+  <select>
+    <option>Show All</option>
+    <option>Alphabetized</option>
+    <option>Newest</option>
+    <option>Price: High to Low</option>
+    <option>Price: Low to High</option>
+  </select>
+</div>
+
+<div class="columns is-multiline is-mobile">
+  <%= render partial: 'star',
+             collection: @stars_alphabetized %>
+</div>
+
+<%= paginate @stars_alphabetized %>

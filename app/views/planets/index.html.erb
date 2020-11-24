@@ -1,5 +1,7 @@
 <h1 class="title title is-2">Planets</h1>
 
+<% breadcrumb :planets, @planets %>
+
 <%= search_form_for @q do |f| %>
   <%= f.label :name_cont %>
   <%= f.search_field :name_cont %>

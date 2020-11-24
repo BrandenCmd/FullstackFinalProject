@@ -3,7 +3,7 @@ class PlanetsController < ApplicationController
     @planets = Planet.page(params[:page]).per(9).all
 
     @q = Planet.ransack(params[:q])
-    @planet = @q.result(distinct: true)
+    @planets = @q.result.page(params[:page]).per(9)
   end
 
   def show

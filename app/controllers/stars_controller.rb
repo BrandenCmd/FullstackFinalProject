@@ -1,6 +1,9 @@
 class StarsController < ApplicationController
   def index
     @stars = Star.page(params[:page]).per(9).all
+
+    @q = Star.ransack(params[:q])
+    @stars = @q.result.page(params[:page]).per(9)
   end
 
   def show

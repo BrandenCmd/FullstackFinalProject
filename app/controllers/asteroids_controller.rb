@@ -1,6 +1,9 @@
 class AsteroidsController < ApplicationController
   def index
     @asteroids = Asteroid.page(params[:page]).per(9).all
+
+    @q = Asteroid.ransack(params[:q])
+    @asteroids = @q.result.page(params[:page]).per(9)
   end
 
   def show

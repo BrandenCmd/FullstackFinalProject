@@ -1,6 +1,6 @@
-<h1 class="title title is-2">Stars</h1>
+<h1 class="title title is-2">Price: High to Low</h1>
 
-<%= paginate @stars %>
+<%= paginate @asteroids_hightolow %>
 
 <div class="dropdown is-hoverable mb-5">
   <div class="dropdown-trigger">
@@ -10,19 +10,19 @@
   </div>
   <div class="dropdown-menu" id="dropdown-menu4" role="menu">
     <div class="dropdown-content">
-      <a href="/star" class="dropdown-item is-active">
+      <a href="/asteroids" class="dropdown-item">
         Show All
       </a>
-      <a href="/star/alphabetized" class="dropdown-item">
+      <a href="/asteroids/alphabetized" class="dropdown-item">
         Alphabetized
       </a>
-      <a href="/star/newest" class="dropdown-item">
+      <a href="/asteroids/newest" class="dropdown-item">
         Newest
       </a>
-      <a href="/star/hightolow" class="dropdown-item">
+      <a href="/asteroids/hightolow" class="dropdown-item is-active">
         Price: High to Low
       </a>
-      <a href="/star/lowtohigh" class="dropdown-item">
+      <a href="/asteroids/lowtohigh" class="dropdown-item">
         Price: Low to High
       </a>
     </div>
@@ -30,8 +30,8 @@
 </div>
 
 <div class="columns is-multiline is-mobile">
-  <%= render partial: 'star',
-             collection: @stars %>
+  <%= render partial: 'asteroid',
+             collection: @asteroids_hightolow %>
 </div>
 
-<%= paginate @stars %>
+<%= paginate @asteroids_hightolow %>

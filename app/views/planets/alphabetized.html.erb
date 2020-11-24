@@ -1,6 +1,6 @@
-<h1 class="title title is-2">Asteroids</h1>
+<h1 class="title title is-2">Alphabetized</h1>
 
-<%= paginate @asteroids %>
+<%= paginate @planets_alphabetized %>
 
 <div class="dropdown is-hoverable mb-5">
   <div class="dropdown-trigger">
@@ -10,19 +10,19 @@
   </div>
   <div class="dropdown-menu" id="dropdown-menu4" role="menu">
     <div class="dropdown-content">
-      <a href="/asteroid" class="dropdown-item is-active">
+      <a href="/planets" class="dropdown-item">
         Show All
       </a>
-      <a href="/asteroid/alphabetized" class="dropdown-item">
+      <a href="/planets/alphabetized" class="dropdown-item is-active">
         Alphabetized
       </a>
-      <a href="/asteroid/newest" class="dropdown-item">
+      <a href="/planets/newest" class="dropdown-item">
         Newest
       </a>
-      <a href="/asteroid/hightolow" class="dropdown-item">
+      <a href="/planets/hightolow" class="dropdown-item">
         Price: High to Low
       </a>
-      <a href="/asteroid/lowtohigh" class="dropdown-item">
+      <a href="/planets/lowtohigh" class="dropdown-item">
         Price: Low to High
       </a>
     </div>
@@ -30,8 +30,8 @@
 </div>
 
 <div class="columns is-multiline is-mobile">
-  <%= render partial: 'asteroid',
-             collection: @asteroids %>
+  <%= render partial: 'planet',
+             collection: @planets_alphabetized %>
 </div>
 
-<%= paginate @asteroids %>
+<%= paginate @planets_alphabetized %>

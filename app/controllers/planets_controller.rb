@@ -1,6 +1,9 @@
-class PlanetController < ApplicationController
+class PlanetsController < ApplicationController
   def index
     @planets = Planet.page(params[:page]).per(9).all
+
+    @q = Planet.ransack(params[:q])
+    @planet = @q.result(distinct: true)
   end
 
   def show

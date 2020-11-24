@@ -1,4 +1,4 @@
-class AsteroidController < ApplicationController
+class AsteroidsController < ApplicationController
   def index
     @asteroids = Asteroid.page(params[:page]).per(9).all
   end

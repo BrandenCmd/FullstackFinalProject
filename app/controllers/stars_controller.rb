@@ -1,4 +1,4 @@
-class StarController < ApplicationController
+class StarsController < ApplicationController
   def index
     @stars = Star.page(params[:page]).per(9).all
   end

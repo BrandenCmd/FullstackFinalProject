@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :about, only: %i[index]
   resources :contact, only: %i[index]
-  resources :planet do
+  resources :planets do
     collection do
       get "alphabetized"
       get "newest"
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       get "lowtohigh"
     end
   end
-  resources :star do
+  resources :stars do
     collection do
       get "alphabetized"
       get "newest"
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       get "lowtohigh"
     end
   end
-  resources :asteroid do
+  resources :asteroids do
     collection do
       get "alphabetized"
       get "newest"

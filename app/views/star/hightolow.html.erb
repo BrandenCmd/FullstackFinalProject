@@ -2,14 +2,31 @@
 
 <%= paginate @stars_hightolow %>
 
-<div class="select mb-5">
-  <select>
-    <option>Show All</option>
-    <option>Alphabetized</option>
-    <option>Newest</option>
-    <option>Price: High to Low</option>
-    <option>Price: Low to High</option>
-  </select>
+<div class="dropdown is-hoverable mb-5">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+      <span>Sorting</span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+    <div class="dropdown-content">
+      <a href="/star" class="dropdown-item">
+        Show All
+      </a>
+      <a href="/star/alphabetized" class="dropdown-item">
+        Alphabetized
+      </a>
+      <a href="/star/newest" class="dropdown-item">
+        Newest
+      </a>
+      <a href="/star/hightolow" class="dropdown-item is-active">
+        Price: High to Low
+      </a>
+      <a href="/star/lowtohigh" class="dropdown-item">
+        Price: Low to High
+      </a>
+    </div>
+  </div>
 </div>
 
 <div class="columns is-multiline is-mobile">

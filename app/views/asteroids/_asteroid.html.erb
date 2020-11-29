@@ -9,7 +9,7 @@
     <% end %>
     <div class="card-content">
       <p class="title is-4"><%= link_to asteroid.name, asteroid %></p>
-      <p class="subtitle is-6 has-text-success">$<%= asteroid.cost %></p>
+      <p class="subtitle is-6 has-text-success"><%= number_to_currency asteroid.cost %></p>
       <p><%= asteroid.asteroid_type.name %></p>
       <div class="content">
         <%= asteroid.description %>

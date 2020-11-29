@@ -9,7 +9,7 @@
     <% end %>
     <div class="card-content">
       <p class="title is-4"><%= link_to star.name, star %></p>
-      <p class="subtitle is-6 has-text-success">$<%= star.cost %></p>
+      <p class="subtitle is-6 has-text-success"><%= number_to_currency star.cost %></p>
       <p><%= star.star_type.name %></p>
       <div class="content">
         <%= star.description %>

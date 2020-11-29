@@ -2,11 +2,27 @@
 
 <% breadcrumb :asteroids, @asteroids %>
 
-<%= search_form_for @q do |f| %>
-  <%= f.label :name_cont %>
-  <%= f.search_field :name_cont %>
-
-  <%= f.submit %>
+<%= search_form_for @q, class:"mb-5" do |f| %>
+  <div class="field">
+    <%= f.label "Name:", class:"label" %>
+    <%= f.search_field :name_cont, class:"input" %>
+  </div>
+  <div class="field">
+    <%= f.label "Category:", class:"label" %>
+    <div class="control">
+      <div class="select">
+        <%= f.select :asteroid_type_name_eq, options_from_collection_for_select(AsteroidType.all, "name", "name"), include_blank: true %>
+      </div>
+    </div>
+  </div>
+  <div class="field is-grouped">
+    <div class="control">
+      <%= f.submit class:"button is-link" %>
+    </div>
+    <div>
+      <%= link_to "Clear", asteroids_path, class:"button is-warning"%>
+    </div>
+  </div>
 <% end %>
 
 <%= paginate @asteroids %>

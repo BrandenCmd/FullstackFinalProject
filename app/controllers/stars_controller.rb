@@ -3,7 +3,7 @@ class StarsController < ApplicationController
     @stars = Star.page(params[:page]).per(9).all
 
     @q = Star.ransack(params[:q])
-    @stars = @q.result.page(params[:page]).per(9)
+    @stars = @q.result.includes(:star_type).page(params[:page]).per(9)
   end
 
   def show

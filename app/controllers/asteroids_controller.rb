@@ -3,7 +3,7 @@ class AsteroidsController < ApplicationController
     @asteroids = Asteroid.page(params[:page]).per(9).all
 
     @q = Asteroid.ransack(params[:q])
-    @asteroids = @q.result.page(params[:page]).per(9)
+    @asteroids = @q.result.includes(:asteroid_type).page(params[:page]).per(9)
   end
 
   def show

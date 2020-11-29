@@ -10,7 +10,5 @@ class ApplicationController < ActionController::Base
 
   def cart
     Planet.find(session[:shopping_cart])
-    Star.find(session[:shopping_cart])
-    Asteroid.find(session[:shopping_cart])
   end
 end

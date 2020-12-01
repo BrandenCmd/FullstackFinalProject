@@ -102,9 +102,10 @@
         </div>
       </div>
     </nav>
-    <%= breadcrumbs pretext: "You are here: ",
-                    separator: " &rsaquo; " %>
-    <%= notice %>
+    <h1 class="ml-5 mt-5 subtitle is-5">
+      <%= breadcrumbs pretext: "You are here: ", separator: " &rsaquo; " %>
+    </h1>
+    <h1 class="ml-5 mt-5 subtitle is-4"><%= notice %></h1>
     <section class="section">
       <div class="container">
         <%= yield %>

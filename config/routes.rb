@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :about, only: %i[index]
   resources :contact, only: %i[index]
   resources :cart, only: %i[create destroy]

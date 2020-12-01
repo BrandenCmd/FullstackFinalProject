@@ -10,7 +10,7 @@
       <% if @planet.image.present? %>
         <div class="card-image">
           <figure class="image is 3x3">
-            <%= image_tag @planet.image %>
+            <%= image_tag(@planet.image, alt: "#{@planet.name} image") %>
           </figure>
         </div>
       <% end %>
@@ -34,7 +34,7 @@
       <% if @star.image.present? %>
         <div class="card-image">
           <figure>
-            <%= image_tag @star.image %>
+            <%= image_tag(@star.image, alt: "#{@star.name} image") %>
           </figure>
         </div>
       <% end %>
@@ -58,7 +58,7 @@
       <% if @asteroid.image.present? %>
         <div class="card-image">
           <figure>
-            <%= image_tag @asteroid.image %>
+            <%= image_tag(@asteroid.image, alt: "#{@asteroid.name} image") %>
           </figure>
         </div>
       <% end %>

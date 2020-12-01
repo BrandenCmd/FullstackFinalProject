@@ -82,14 +82,20 @@
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
-            Cart
+            Shopping Cart
           </a>
           <div class="navbar-dropdown">
             <ul>
               <% cart.each do |planet| %>
                 <li class="navbar-item">
-                  <%= planet.name %> <%= link_to 'X', cart_path(planet), method: :delete %>
+                  <%= planet.name %> <%= link_to '❌', cart_path(planet), method: :delete %>
                 </li>
+              <% end %>
+              <% if user_signed_in? && cart.any? %>
+                <hr class="navbar-divider">
+                <a class="navbar-item" href="#">
+                  Checkout
+                </a>
               <% end %>
             </ul>
           </div>

@@ -8,6 +8,25 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"input" %>
   </div>
 
+  <div class="field">
+    <%= f.label :address, class:"label" %><br />
+    <%= f.text_field :address, class:"input" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Province:", class:"label" %>
+    <div class="control">
+      <div class="select">
+        <%= f.select :province_id, options_from_collection_for_select(Province.all, "id", "name", current_user.province_id) %>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :postal_code, class:"label" %><br />
+    <%= f.text_field :postal_code, class:"input" %>
+  </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>

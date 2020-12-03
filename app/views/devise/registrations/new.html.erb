@@ -9,6 +9,25 @@
   </div>
 
   <div class="field">
+    <%= f.label :address, class:"label" %><br />
+    <%= f.text_field :address, class:"input" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Province:", class:"label" %>
+    <div class="control">
+      <div class="select">
+        <%= f.select :province_id, options_from_collection_for_select(Province.all, "id", "name") %>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :postal_code, class:"label" %><br />
+    <%= f.text_field :postal_code, class:"input" %>
+  </div>
+
+  <div class="field">
     <%= f.label :password, class:"label" %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>

@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_03_035638) do
-
+ActiveRecord::Schema.define(version: 20_201_203_035_638) do
   create_table "abouts", force: :cascade do |t|
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
@@ -139,10 +138,10 @@ ActiveRecord::Schema.define(version: 2020_12_03_035638) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "address"
-    t.integer "provinces_id"
+    t.integer "province_id", null: false
     t.string "postal_code"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["provinces_id"], name: "index_users_on_provinces_id"
+    t.index ["province_id"], name: "index_users_on_province_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -150,5 +149,5 @@ ActiveRecord::Schema.define(version: 2020_12_03_035638) do
   add_foreign_key "asteroids", "asteroid_types"
   add_foreign_key "planets", "planet_types"
   add_foreign_key "stars", "star_types"
-  add_foreign_key "users", "provinces", column: "provinces_id"
+  add_foreign_key "users", "provinces"
 end

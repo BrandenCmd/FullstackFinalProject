@@ -94,9 +94,12 @@
               <% end %>
               <% if user_signed_in? && cart.any? %>
                 <hr class="navbar-divider">
-                <a class="navbar-item" href="#">
-                  Checkout
-                </a>
+                <%= form_with url: checkout_create_path, remote: true, class:"navbar-item" do %>
+                  <% cart.each do |planet| %>
+                    <%= hidden_field_tag 'planet_ids[]', planet.id %>
+                  <% end %>
+                  <%= button_tag 'Checkout', class:"button is-link" %>
+                <% end %>
               <% end %>
             </ul>
           </div>

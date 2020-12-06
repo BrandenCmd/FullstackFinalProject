@@ -3,6 +3,13 @@ Rails.application.routes.draw do
   resources :about, only: %i[index]
   resources :contact, only: %i[index]
   resources :cart, only: %i[create destroy]
+
+  scope "/checkout" do
+    post "create", to: "checkout#create", as: "checkout_create"
+    get "success", to: "checkout#success", as: "checkout_success"
+    get "cancel", to: "checkout#cancel", as: "checkout_cancel"
+  end
+
   resources :planets do
     collection do
       get "alphabetized"

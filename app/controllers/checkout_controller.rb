@@ -55,6 +55,14 @@ class CheckoutController < ApplicationController
       ]
     )
 
+    Order.create(
+      total:     @session.amount_total,
+      sub_total: order_subtotal,
+      item:      line_items,
+      user_id:   current_user.id,
+      status:    "Pending"
+    )
+
     respond_to do |format|
       format.js
     end
